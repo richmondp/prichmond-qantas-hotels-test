@@ -9,7 +9,7 @@ const SearchResultsPage = () => {
     <PageLayout>
       <Box>
         {searchResults.map((searchResult) => (
-          <Box>{searchResult.id}</Box>
+          <Box key={searchResult.id}>{searchResult.id}</Box>
         ))}
       </Box>
     </PageLayout>
