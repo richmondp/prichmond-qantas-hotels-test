@@ -1,10 +1,8 @@
-import './App.css'
+import './App.css';
+import SearchResultsPage from './pages/search-results/SearchResultsPage.tsx';
 
 function App() {
-
-  return (
-    <div>App</div>
-  )
+  return <SearchResultsPage />;
 }
 
-export default App
+export default App;
