@@ -1,9 +1,9 @@
-type ImageType = 'PRIMARY';
-type RatingType = 'self' | 'star';
-type PromotionType = 'MEMBER' | 'CAMPAIGN';
-type CANCELLATION_TYPE = 'FREE_CANCELLATION' | 'NOT_REFUNDABLE';
+export type ImageType = 'PRIMARY';
+export type RatingType = 'self' | 'star';
+export type PromotionType = 'MEMBER' | 'CAMPAIGN';
+export type CANCELLATION_TYPE = 'FREE_CANCELLATION' | 'NOT_REFUNDABLE';
 
-interface PreviewImage {
+export interface PreviewImage {
   url: string;
   caption: string;
   imageType: ImageType;
@@ -19,7 +19,7 @@ export interface Rating {
   ratingType: RatingType;
 }
 
-interface Property {
+export interface Property {
   propertyId: string;
   title: string;
   address: string[];
@@ -27,16 +27,16 @@ interface Property {
   rating: Rating;
 }
 
-interface Promotion {
+export interface Promotion {
   title: string;
   type: PromotionType;
 }
 
-interface CancellationOption {
+export interface CancellationOption {
   cancellationType: CANCELLATION_TYPE;
 }
 
-interface Offer {
+export interface Offer {
   promotion: Promotion;
   name: string;
   displayPrice: Amount;

@@ -6,16 +6,26 @@ import SearchResultListItem from './SearchResultListItem.tsx';
 const SearchResultsPage = () => {
   const { data: searchResults } = useSearchResults();
 
+  if (!searchResults?.length) {
+    return (
+      <Box data-testid="no-search-results-container">
+        <Typography>No search results</Typography>
+      </Box>
+    );
+  }
+
   return (
     <PageLayout>
-      <Box display="flex">
-        <Typography>{searchResults.length} hotels in Sydney</Typography>
+      <Box data-testid="search-results-content">
+        <Box display="flex" data-test-id="search-result-summary">
+          <Typography>{searchResults.length} hotels in Sydney</Typography>
+        </Box>
+        <List data-test-id="search-results-list">
+          {searchResults.map((searchResult) => (
+            <SearchResultListItem key={searchResult.id} item={searchResult} />
+          ))}
+        </List>
       </Box>
-      <List>
-        {searchResults.map((searchResult) => (
-          <SearchResultListItem key={searchResult.id} item={searchResult} />
-        ))}
-      </List>
     </PageLayout>
   );
 };
