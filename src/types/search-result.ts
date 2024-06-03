@@ -9,12 +9,12 @@ interface PreviewImage {
   imageType: ImageType;
 }
 
-interface Amount {
+export interface Amount {
   amount: number;
   currency: string;
 }
 
-interface Rating {
+export interface Rating {
   ratingValue: number;
   ratingType: RatingType;
 }

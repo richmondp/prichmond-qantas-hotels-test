@@ -1,17 +1,21 @@
 import PageLayout from '../../components/layout/PageLayout.tsx';
 import { useSearchResults } from './useSearchResults.hook.ts';
-import { Box } from '@mui/material';
+import { Box, List, Typography } from '@mui/material';
+import SearchResultListItem from './SearchResultListItem.tsx';
 
 const SearchResultsPage = () => {
   const { data: searchResults } = useSearchResults();
 
   return (
     <PageLayout>
-      <Box>
-        {searchResults.map((searchResult) => (
-          <Box key={searchResult.id}>{searchResult.id}</Box>
-        ))}
+      <Box display="flex">
+        <Typography>{searchResults.length} hotels in Sydney</Typography>
       </Box>
+      <List>
+        {searchResults.map((searchResult) => (
+          <SearchResultListItem key={searchResult.id} item={searchResult} />
+        ))}
+      </List>
     </PageLayout>
   );
 };
