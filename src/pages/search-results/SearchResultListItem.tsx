@@ -9,7 +9,7 @@ interface Props {
 
 const SearchResultListItem = ({ item }: Props) => {
   return (
-    <ListItem sx={{ padding: 0 }}>
+    <ListItem data-testid="search-result-list-item" sx={{ padding: 0 }}>
       <Box display="flex">
         <img src={item.property.previewImage.url} />
         <Box>

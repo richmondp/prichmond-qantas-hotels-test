@@ -9,8 +9,8 @@ interface Props {
 const HotelPrice = ({ displayPrice, savings }: Props) => {
   return (
     <Box display="flex" flexDirection="column">
-      <Box>{displayPrice.amount}</Box>
-      {savings?.amount && <Box>{savings.amount}</Box>}
+      <Box data-testid="hotel-display-amount">{displayPrice.amount}</Box>
+      {savings?.amount && <Box data-testid="hotel-savings-price">{savings.amount}</Box>}
     </Box>
   );
 };

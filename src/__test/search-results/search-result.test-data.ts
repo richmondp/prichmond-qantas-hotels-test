@@ -6,7 +6,7 @@ const buildPromotion = (overrides?: Partial<Promotion>): Promotion => ({
   ...overrides,
 });
 
-const buildAmount = (overrides?: Partial<Amount>): Amount => ({
+export const buildAmount = (overrides?: Partial<Amount>): Amount => ({
   amount: 321.45,
   currency: 'AUD',
   ...overrides,
@@ -25,7 +25,7 @@ const buildPreviewImage = (overrides?: Partial<PreviewImage>): PreviewImage => (
   ...overrides,
 });
 
-const buildProperty = (overrides?: Partial<Property>): Property => ({
+export const buildProperty = (overrides?: Partial<Property>): Property => ({
   propertyId: 'default-property-id',
   title: 'default-property-title',
   address: ['12 Test St', 'Collingwood'],
@@ -34,7 +34,7 @@ const buildProperty = (overrides?: Partial<Property>): Property => ({
   ...overrides,
 });
 
-const buildOffer = (overrides?: Partial<Offer>): Offer => ({
+export const buildOffer = (overrides?: Partial<Offer>): Offer => ({
   promotion: buildPromotion(),
   name: 'default-offer-name',
   displayPrice: buildAmount(),
