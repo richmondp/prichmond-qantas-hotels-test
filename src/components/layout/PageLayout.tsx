@@ -5,8 +5,8 @@ import Header from '../Header.tsx';
 const PageLayout = ({ children }: PropsWithChildren) => {
   return (
     <>
-      <Header />
-      <Container maxWidth="xl" sx={{ display: 'flex', flexDirection: 'column' }}>
+      <Container maxWidth="md" sx={{ display: 'flex', flexDirection: 'column' }}>
+        <Header />
         {children}
       </Container>
     </>

@@ -16,6 +16,7 @@ Further details on the requirements can be found [here](./instructions.md).
 ## Testing
 
 1. run `npm test`
+2. run `npm run test:watch` to run tests when code changes
 
 ## Assumptions/Comments/Improvements
 
