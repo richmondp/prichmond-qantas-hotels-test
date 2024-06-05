@@ -1,8 +1,8 @@
-import qantasLogo from '../assets/qantas-logo.png';
+import qantasLogo from '../../assets/qantas-logo.png';
 
 const QantasLogo = () => {
   return (
-    <a href="/">
+    <a href="/public">
       <img src={qantasLogo} alt="qantas logo" data-testid="logo-image" width="200px" />
     </a>
   );

@@ -12,7 +12,7 @@ export const buildAmount = (overrides?: Partial<Amount>): Amount => ({
   ...overrides,
 });
 
-const buildRating = (overrides?: Partial<Rating>): Rating => ({
+export const buildRating = (overrides?: Partial<Rating>): Rating => ({
   ratingValue: 4,
   ratingType: 'star',
   ...overrides,

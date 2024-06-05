@@ -1,7 +1,7 @@
 import { Box, Divider, ListItem, Typography } from '@mui/material';
 import { SearchResult } from '../../types/search-result.ts';
-import HotelRating from '../../components/HotelRating.tsx';
-import HotelPrice from '../../components/HotelPrice.tsx';
+import HotelPrice from '../../components/hotel-price/HotelPrice.tsx';
+import HotelRating from '../../components/hotel-rating/HotelRating.tsx';
 
 interface Props {
   item: SearchResult;
@@ -15,8 +15,13 @@ const SearchResultListItem = ({ item }: Props) => {
         <Box flex={1}>
           <Divider />
           <Box sx={{ paddingTop: 1 }}>
-            <Box display="flex">
-              <Typography variant="body1" color="text.primary">
+            <Box display="flex" alignItems="center" gap={2}>
+              <Typography
+                flex={0.5}
+                sx={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
+                variant="body1"
+                color="text.primary"
+              >
                 {item.property.title}
               </Typography>
               <HotelRating rating={item.property.rating} />

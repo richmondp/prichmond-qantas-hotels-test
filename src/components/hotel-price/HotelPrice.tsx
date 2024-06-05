@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-import { Amount } from '../types/search-result.ts';
+import { Amount } from '../../types/search-result.ts';
 
 interface Props {
   displayPrice: Amount;

@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-import QantasLogo from './QantasLogo.tsx';
+import QantasLogo from '../qantas-logo/QantasLogo.tsx';
 
 const Header = () => {
   return (
