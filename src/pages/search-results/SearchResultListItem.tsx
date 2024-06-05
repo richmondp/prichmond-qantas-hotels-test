@@ -2,6 +2,7 @@ import { Box, Divider, ListItem, Typography } from '@mui/material';
 import { SearchResult } from '../../types/search-result.ts';
 import HotelPrice from '../../components/hotel-price/HotelPrice.tsx';
 import HotelRating from '../../components/hotel-rating/HotelRating.tsx';
+import { cancellationTypeReferenceData } from '../../types/search-result-reference-data.ts';
 
 interface Props {
   item: SearchResult;
@@ -28,9 +29,14 @@ const SearchResultListItem = ({ item }: Props) => {
             </Box>
             {item.property.address.join(',')}
             <Box display="flex" justifyContent="space-between">
-              <Box>
-                <Box>{item.offer.name}</Box>
-                <Box>{item.offer.cancellationOption.cancellationType}</Box>
+              <Box display="flex" flexDirection="column" justifyContent="space-between">
+                <Box></Box>
+                <Typography variant="caption" color="red">
+                  <u>{item.offer.name}</u>
+                </Typography>
+                <Typography variant="caption" color="green">
+                  {cancellationTypeReferenceData[item.offer.cancellationOption.cancellationType]}
+                </Typography>
               </Box>
               <Box>
                 <HotelPrice displayPrice={item.offer.displayPrice} savings={item.offer.savings} />

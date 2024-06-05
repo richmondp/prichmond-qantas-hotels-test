@@ -79,7 +79,7 @@ describe('SearchResultsPage', () => {
         amount: within(item).getByTestId('hotel-display-amount').textContent,
       }));
 
-      expect(listItemAmounts).toEqual([{ amount: '300' }, { amount: '200' }, { amount: '100' }]);
+      expect(listItemAmounts).toEqual([{ amount: '$300' }, { amount: '$200' }, { amount: '$100' }]);
     });
 
     it('should display values using sort order low-high when user selects Price (low-high) option', async () => {
@@ -99,7 +99,7 @@ describe('SearchResultsPage', () => {
         amount: within(item).getByTestId('hotel-display-amount').textContent,
       }));
 
-      expect(listItemAmounts).toEqual([{ amount: '100' }, { amount: '200' }, { amount: '300' }]);
+      expect(listItemAmounts).toEqual([{ amount: '$100' }, { amount: '$200' }, { amount: '$300' }]);
     });
   });
 });
