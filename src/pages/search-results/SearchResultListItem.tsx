@@ -18,17 +18,14 @@ const SearchResultListItem = ({ item }: Props) => {
           <Divider />
           <Box display="flex" flexDirection="column" sx={{ paddingTop: 1 }}>
             <Box display="flex" alignItems="center" gap={2}>
-              <Box display="flex" flexDirection="column">
-                <Typography
-                  data-testid="search-result-hotel-name"
-                  flex={0.5}
-                  sx={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
-                  variant="body1"
-                  color="text.primary"
-                >
-                  {item.property.title}
-                </Typography>
-              </Box>
+              <Typography
+                data-testid="search-result-hotel-name"
+                sx={{ maxWidth: '260px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
+                variant="body1"
+                color="text.primary"
+              >
+                {item.property.title}
+              </Typography>
               <HotelRating rating={item.property.rating} />
             </Box>
             <Typography data-testid="search-result-address" variant="caption">
