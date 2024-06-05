@@ -18,7 +18,7 @@ export const buildRating = (overrides?: Partial<Rating>): Rating => ({
   ...overrides,
 });
 
-const buildPreviewImage = (overrides?: Partial<PreviewImage>): PreviewImage => ({
+export const buildPreviewImage = (overrides?: Partial<PreviewImage>): PreviewImage => ({
   url: 'https://unsplash.it/145/125/?random',
   caption: 'default-image-caption',
   imageType: 'PRIMARY',
