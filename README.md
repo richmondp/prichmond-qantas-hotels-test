@@ -1,8 +1,7 @@
 # Qantas Hotels Test 
+This repository contains a simple react app to display a list of hotels from a [sample data source](./src/pages/search-results/search-result-data.json) 
 
-
-
-Further details on the requirements can be found [here](./instructions.md).
+Detailed app requirements can be found [here](./instructions.md). Any assumption made, question or comment raised during development has been added to the list below. 
 
 ## Pre-requisites
 
@@ -28,4 +27,8 @@ Further details on the requirements can be found [here](./instructions.md).
    1. The sample ratings provided appear to be either whole (4) or half numbers (4.5). I have only types the ratingValue to be a number as I am not aware of the full requirements but this could be locked down further if needed.
    2. As I have a loose `number` restriction on ratingValue, it would be possible to give ratings of 4.12 or 4.78 for example. To handle these scenarios, I have rounded the remainder to determine if a half star is given. e.g. 0.45 would become 0 (no half star), 0.50 would be come 1 - (1 half star). There are tests covering this scenario and can easily be refactored if required.
    3. Assuming that the sample page-mock provided is using the same sample data, there appears to be a discrepancy with how half ratings are dealt with for star and self ratings. For instance, the `Courtyard by Marriott Sydney-North Ryde` has a self rating of 4.5 but in the page mock, it shows a grey circle in the 5th position (half rating position). This appears to be in contrast with the property `Metro Hotel Marlow Sydney Central` which has a star rating of 3.5. It shows a half star in the 4th position (half rating position) and a grey star in the final position. <br> I have made the decision to show a outlined circle for a half self rating and a grey circle for an 'empty' rating. This is to keep it consistent with the star rating system. If this is incorrect, it would be a simple refactor to change this.
-6. 
+6. React Component tests have been written to cover major logic and basic layout. With more time, I would write additional tests
+7. I've used MUI React Component library - This helped me to speed up the development for this test. I use MUI on a lot of projects, but I have also written/used components for custom react libraries
+8. Some improvements would need to be made to make the Search Result Page more responsive. I didn't focus on this as it was not a requirement outlined in the instructions. 
+9. I have defaulted the sorting to be Price (high-low). From the provided page mock image/instructions it was unclear what the default sort ordering should be
+10. Designs are a near match to the provided page mock image, but it is not intended to be a pixel perfect representation.
