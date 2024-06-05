@@ -16,26 +16,30 @@ const SearchResultListItem = ({ item }: Props) => {
         <HotelImage image={item.property.previewImage} promotionLabel={item.offer.promotion.title} />
         <Box flex={1}>
           <Divider />
-          <Box sx={{ paddingTop: 1 }}>
+          <Box display="flex" flexDirection="column" sx={{ paddingTop: 1 }}>
             <Box display="flex" alignItems="center" gap={2}>
-              <Typography
-                flex={0.5}
-                sx={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
-                variant="body1"
-                color="text.primary"
-              >
-                {item.property.title}
-              </Typography>
+              <Box display="flex" flexDirection="column">
+                <Typography
+                  data-testid="search-result-hotel-name"
+                  flex={0.5}
+                  sx={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
+                  variant="body1"
+                  color="text.primary"
+                >
+                  {item.property.title}
+                </Typography>
+              </Box>
               <HotelRating rating={item.property.rating} />
             </Box>
-            {item.property.address.join(',')}
+            <Typography data-testid="search-result-address" variant="caption">
+              {item.property.address.join(', ')}
+            </Typography>
             <Box display="flex" justifyContent="space-between">
               <Box display="flex" flexDirection="column" justifyContent="space-between">
-                <Box></Box>
-                <Typography variant="caption" color="red">
+                <Typography data-testid="search-result-offer-name" variant="caption" color="red">
                   <u>{item.offer.name}</u>
                 </Typography>
-                <Typography variant="caption" color="green">
+                <Typography data-testid="search-result-cancellation-policy" variant="caption" color="green">
                   {cancellationTypeReferenceData[item.offer.cancellationOption.cancellationType]}
                 </Typography>
               </Box>

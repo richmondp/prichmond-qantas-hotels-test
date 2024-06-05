@@ -13,7 +13,7 @@ const HotelImage = ({ image, promotionLabel }: Props) => {
     setLoadingImage(false);
   };
   return (
-    <Box display="flex" alignItems="center">
+    <Box data-testid="hotel-image-container" display="flex" alignItems="center">
       {loadingImage && (
         <Skeleton data-testid="hotel-image-loading-skeleton" variant="rectangular" width="145px" height="125px" />
       )}

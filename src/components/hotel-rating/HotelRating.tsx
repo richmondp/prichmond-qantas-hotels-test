@@ -38,7 +38,7 @@ const HotelRating = ({ rating: { ratingValue, ratingType } }: Props) => {
   }, [ratingValue, ratingType]);
 
   return (
-    <Box display="flex">
+    <Box data-testid="hotel-rating-container" display="flex">
       {ratingIcons.map((station, index) => (
         <React.Fragment key={index}> {station} </React.Fragment>
       ))}

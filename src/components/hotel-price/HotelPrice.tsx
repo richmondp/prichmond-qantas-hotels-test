@@ -9,7 +9,7 @@ interface Props {
 
 const HotelPrice = ({ displayPrice, savings }: Props) => {
   return (
-    <Stack>
+    <Stack data-testid="hotel-price-container">
       <Typography data-testid="hotel-price-summary" variant="caption">
         <strong>1</strong> night total ({displayPrice.currency})
       </Typography>
